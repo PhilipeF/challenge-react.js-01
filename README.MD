@@ -11,5 +11,8 @@ Desenvolva uma aplicação que:
 
 - crie duas funcionalidades para a aplicação:
 
-         Desfazer
-         Refazer
+         Desfazer (Undo)
+         Refazer (Redo)
+
+Para conferir a funcionalidade da 
+aplicação acesse o link: <p> https://challenge-react01.vercel.app/
