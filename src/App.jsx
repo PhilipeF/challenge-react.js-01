@@ -13,7 +13,7 @@ function App() {
     setList((prev) => [...prev, newDot]);
   }
 
-  const handleDesfazer = (event) => {
+  const handleRedo = (event) => {
     event.stopPropagation();
     if (list.length === 0) {
       return;
@@ -30,7 +30,7 @@ function App() {
   }
 
 
-  const handleRefazer = (event) => {
+  const handleDo = (event) => {
     event.stopPropagation();
 
     if (undid.length === 0) {
@@ -57,8 +57,8 @@ function App() {
         />
       )}
 
-      <button className='buttonDesfaz' onClick={handleDesfazer}>Desfazer</button>
-      <button className='buttonRefazer' onClick={handleRefazer}>Refazer</button>
+      <button className='buttonApp' onClick={handleRedo}>Desfazer</button>
+      <button className='buttonApp' onClick={handleDo}>Refazer</button>
 
     </div>
   )

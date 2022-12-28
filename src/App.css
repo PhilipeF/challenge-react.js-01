@@ -26,4 +26,10 @@
   left: 10%;  
 }
 
+.buttonApp {
+  margin-top: 2rem;
+  display: inline-block; 
+  margin-left: 1rem; 
+}
+
 
