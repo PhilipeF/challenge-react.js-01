@@ -3,6 +3,7 @@ import './App.css'
 
 function App() {
   const [list, setList] = useState([]);
+  const [undid, setUndid] = useState([]);
 
   const handleClick = (event) => {
     const newDot = {
@@ -12,12 +13,56 @@ function App() {
     setList((prev) => [...prev, newDot]);
   }
 
+  const handleDesfazer = (event) => {
+    event.stopPropagation();
+    if (list.length === 0) {
+      return;
+    }
+
+    const lastItem = list[list.length - 1]
+    setUndid((prev) => [...prev, lastItem]);
+
+
+    setList((prev) => {
+      const newArr = [...prev].slice(0, -1);
+      return newArr;
+    });
+  }
+
+
+  const handleRefazer = (event) => {
+    event.stopPropagation();
+
+    if (undid.length === 0) {
+      return;
+    }
+
+    const recoveredDot = undid[undid.length - 1];
+    setUndid((prev) => {
+      const newArr = [...prev].slice(0, -1);
+      return newArr
+    });
+
+    setList((prev) => [...prev, recoveredDot]);
+  }
+
   return (
     <div id='page' onClick={handleClick}>
-      {list.map((item) => <span className='dot'
-        style={{ left: item.clientX, top: item.clientY }} />)}
+
+      {list.map((item, index) =>
+        <span
+          key={index}
+          className='dot'
+          style={{ left: item.clientX, top: item.clientY }}
+        />
+      )}
+
+      <button className='buttonDesfaz' onClick={handleDesfazer}>Desfazer</button>
+      <button className='buttonRefazer' onClick={handleRefazer}>Refazer</button>
+
     </div>
   )
 }
+
 
 export default App
