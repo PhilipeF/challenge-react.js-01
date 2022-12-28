@@ -15,4 +15,4 @@ Desenvolva uma aplicação que:
          Refazer (Redo)
 
 Para conferir a funcionalidade da 
-aplicação acesse o link: <p> https://challenge-react01.vercel.app/
+aplicação acesse o link abaixo: <p> https://challenge-react01.vercel.app/
