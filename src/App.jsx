@@ -13,7 +13,7 @@ function App() {
     setList((prev) => [...prev, newDot]);
   }
 
-  const handleRedo = (event) => {
+  const handleUndo = (event) => {
     event.stopPropagation();
     if (list.length === 0) {
       return;
@@ -29,8 +29,7 @@ function App() {
     });
   }
 
-
-  const handleDo = (event) => {
+  const handleRedo = (event) => {
     event.stopPropagation();
 
     if (undid.length === 0) {
@@ -57,12 +56,11 @@ function App() {
         />
       )}
 
-      <button className='buttonApp' onClick={handleRedo}>Desfazer</button>
-      <button className='buttonApp' onClick={handleDo}>Refazer</button>
+      <button className='buttonApp' onClick={handleUndo}>Desfazer</button>
+      <button className='buttonApp' onClick={handleRedo}>Refazer</button>
 
     </div>
   )
 }
-
 
 export default App
