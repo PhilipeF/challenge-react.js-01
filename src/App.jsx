@@ -56,6 +56,8 @@ function App() {
         />
       )}
 
+        <h3>Clique em qualquer lugar da pagina para gerar um ponto !!</h3>
+
       <button className='buttonApp' onClick={handleUndo}>Desfazer</button>
       <button className='buttonApp' onClick={handleRedo}>Refazer</button>
 
